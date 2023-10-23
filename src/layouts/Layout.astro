@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { Icon } from "astro-icon";
+import { Main } from "@/components/layouts/LayoutNavs.tsx";
+const { title = "My Page", description = "My Site Description" } = Astro.props;
+
+---
+
+<BaseLayout title="My Page" description="My Site Description"><div class="min-h-[calc(100vh_-_2em)] grid grid-cols-[1fr] grid-rows-[min-content_1fr_min-content] gap-x-0 gap-y-0">
+    <Main client:load /><slot />
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+      
+      <div>
+      
+        <div class="grid grid-flow-col gap-4">
+          
+            <!-- using Astro Icon. Read the docs at https://github.com/natemoo-re/astro-icon#readme -->
+            <a href="https://www.facebook.com/company-facebook/"><Icon name="mdi:facebook" width="24" height="24" class="fill-current" /></a> 
+          
+            <!-- using Astro Icon. Read the docs at https://github.com/natemoo-re/astro-icon#readme -->
+            <a href="https://www.instagram.com/company-instagram/"><Icon name="mdi:instagram" width="24" height="24" class="fill-current" /></a> 
+          
+            <!-- using Astro Icon. Read the docs at https://github.com/natemoo-re/astro-icon#readme -->
+            <a href="https://twitter.com/company-twitter"><Icon name="mdi:twitter" width="24" height="24" class="fill-current" /></a> 
+          
+        </div>
+      
+        </div>
+      <div>
+        <p>©2023 My Site. Powered by <a href="https://www.springmicrohost.com/" class="link">SpringMicroHost</a>. All rights reserved.</p>
+      </div>
+    </footer>
+  
+  </div></BaseLayout>
+
+  
